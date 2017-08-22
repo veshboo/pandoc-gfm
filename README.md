@@ -8,7 +8,9 @@ Howto **pandoc markdown with latex contents** in github project, especially serv
     pandoc -t markdown_github --webtex README.pandoc.md -o README.md
     ```
 
-test document \_\_\_
+test document follows
+
+------------------------------------------------------------------------
 
 Machine Learning Lecture by Andrew Ng on Coursera
 =================================================

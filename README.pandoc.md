@@ -8,7 +8,8 @@ especially serving it as README.md
     pandoc -t markdown_github --webtex README.pandoc.md -o README.md
     ```
 
-test document
+test document follows
+
 ___
 
 # Machine Learning Lecture by Andrew Ng on Coursera
