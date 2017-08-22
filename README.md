@@ -96,6 +96,7 @@ Training set / Cross Validation set / Test set
 Model selection details: *J*(*Θ*; *λ*)
 
 -   Number of parameters(|*Θ*|) and Bias/Variance
+    <!--                vvvvvvvvv pandoc markdown to markdown_github doesn't work here, only works simple cases? -->
     -   bias(underfit): *J*<sub>*C**V*</sub>(*θ*)≈*J*<sub>*t**r**a**i**n*</sub>(*θ*)≫0, not enough parameters for task
     -   variance(overfit): *J*<sub>*C**V*</sub>(*θ*)≫*J*<sub>*t**r**a**i**n*</sub>(*θ*), too many parameters for task
 -   Regualization and Bias/Variance
