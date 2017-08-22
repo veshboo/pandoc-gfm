@@ -1,0 +1,174 @@
+<h1 id="machine-learning-lecture-by-andrew-ng-on-coursera">Machine Learning Lecture by Andrew Ng on Coursera</h1>
+<h2 id="week-1">Week 1</h2>
+<p>Introduction</p>
+<ul>
+<li>What is Machine Learning?</li>
+<li>Supervised Learning</li>
+<li>Unsupervised Learning</li>
+</ul>
+<p>Linear Regression with One Variable</p>
+<ul>
+<li>Model (Hypothesis)</li>
+<li>Cost Function</li>
+<li>Gradient Descent</li>
+</ul>
+<h2 id="week-2">Week 2</h2>
+<p>Linear Regression with Multiple Variable</p>
+<ul>
+<li>Multiple Features</li>
+<li>Feature Scaling</li>
+<li>Learning Rate</li>
+<li>Features and Polymomial Regression</li>
+<li>Computing Parameters Analytically - Normal Equation</li>
+</ul>
+<h2 id="week-3">Week 3</h2>
+<p>Logistic Regression</p>
+<ul>
+<li>Classification</li>
+<li>Logistic Hypothesis</li>
+<li>Decision Boundary</li>
+<li>Cost Function</li>
+<li>Simplified Cost Function and Gradient Descent</li>
+<li>Advanced Optimization</li>
+<li>Multiclass Classification - One-vs-all</li>
+</ul>
+<p>Regularization</p>
+<ul>
+<li>The Problem of Overfitting</li>
+<li>Cost Function</li>
+<li>Regularized Linear Regression</li>
+</ul>
+<h2 id="week-4">Week 4</h2>
+<p>Neural Networks: Representation</p>
+<ul>
+<li>Non-linear Hypothesis</li>
+<li>Neurons and the Brain</li>
+<li><strong>Model Representation</strong> <br/> <span class="math inline"><em>x</em> = <em>a</em><sup>(1)</sup> → <em>g</em>(<em>a</em><sup>(1)</sup> * <em>Θ</em><sup>(1)</sup>)=<em>a</em><sup>(2)</sup> → <em>g</em>(<em>a</em><sup>(2)</sup> * <em>Θ</em><sup>(2)</sup>)=<em>a</em><sup>(3)</sup> → ... → <em>g</em>(<em>a</em><sup>(<em>l</em> − 1)</sup> * <em>Θ</em><sup>(<em>l</em> − 1)</sup>)=<em>a</em><sup>(<em>l</em>)</sup> = <em>h</em><sub><em>Θ</em></sub>(<em>x</em>)</span></li>
+<li>Example - AND, ! AND !, OR -&gt; XOR</li>
+<li>Example - Multclass Classification</li>
+</ul>
+<h2 id="week-5">Week 5</h2>
+<p>Neural Networks: Learning</p>
+<ul>
+<li>Cost Function - NN multiclass classification</li>
+<li>Backpropagation</li>
+</ul>
+<p>Backpropagation in Practice</p>
+<ul>
+<li>Unrolling Parameters</li>
+<li>Gradient Checking</li>
+<li>Random Initialization</li>
+<li>Putting It Together</li>
+</ul>
+<h2 id="week-6">Week 6</h2>
+<p>Advice for Applying Machine Learning</p>
+<ul>
+<li><strong><em>Not-satisfiying result! -&gt; What to Try Next?</em></strong>
+<ul>
+<li>More training examples</li>
+<li>Trying smaller sets of features</li>
+<li>Trying additional sets of features</li>
+<li>Trying polynomial features</li>
+<li>Increasing or decreasing <span class="math inline"><em>λ</em></span></li>
+</ul></li>
+</ul>
+<p>Training set / Cross Validation set / Test set</p>
+<ul>
+<li>Evaluating a hypothesis with a separate test set
+<ul>
+<li>Check overfit, generalization</li>
+<li>train:test = 70%:30%</li>
+</ul></li>
+<li>Model selection with another separate cross validation set
+<ul>
+<li>Compare different models (# of features, degree of polynomial, and <span class="math inline"><em>λ</em></span>)</li>
+<li>train:cv:test = 60%:20%:20%</li>
+</ul></li>
+</ul>
+<p>Model selection details: <span class="math inline"><em>J</em>(<em>Θ</em>; <em>λ</em>)</span></p>
+<ul>
+<li>Number of parameters(<span class="math inline">|<em>Θ</em>|</span>) and Bias/Variance
+<ul>
+<li>bias(underfit): <span class="math inline"><em>J</em><sub><em>C</em><em>V</em></sub>(<em>θ</em>)≈<em>J</em><sub><em>t</em><em>r</em><em>a</em><em>i</em><em>n</em></sub>(<em>θ</em>)≫0</span>, not enough parameters for task</li>
+<li>variance(overfit): <span class="math inline"><em>J</em><sub><em>C</em><em>V</em></sub>(<em>θ</em>)≫<em>J</em><sub><em>t</em><em>r</em><em>a</em><em>i</em><em>n</em></sub>(<em>θ</em>)</span>, too many parameters for task</li>
+</ul></li>
+<li>Regualization and Bias/Variance
+<ul>
+<li>Remind contribution of <span class="math inline"><em>λ</em></span> to <span class="math inline"><em>J</em></span>: <span class="math inline">$J(θ) = \frac{1}{2m} \sum_{i=1}^{m} (h_θ (x^{(i)}) - y^{(i)})^2 + \frac{\lambda}{2m} \sum_{j=1}^{m} \theta_j^2$</span></li>
+<li><span class="math inline">$\lambda \approx 0 \implies \verb!maybe overfit!$</span></li>
+<li><span class="math inline">$\lambda \gg 0 \implies \verb!maybe less overfit!$</span></li>
+</ul></li>
+<li>Learning Curves, Error x <strong><em>training set size</em></strong>
+<ul>
+<li>High bias, low training size: <span class="math inline"><em>J</em><sub><em>t</em><em>r</em><em>a</em><em>i</em><em>n</em></sub>(<em>Θ</em>)</span> low and <span class="math inline"><em>J</em><sub><em>C</em><em>V</em></sub>(<em>Θ</em>)</span> high</li>
+<li>High bias, large training size: both <span class="math inline"><em>J</em><sub><em>t</em><em>r</em><em>a</em><em>i</em><em>n</em></sub>(<em>Θ</em>)</span> and <span class="math inline"><em>J</em><sub><em>C</em><em>V</em></sub>(<em>Θ</em>)</span> high</li>
+<li>High variance, low training size: <span class="math inline"><em>J</em><sub><em>t</em><em>r</em><em>a</em><em>i</em><em>n</em></sub>(<em>Θ</em>)</span> low and <span class="math inline"><em>J</em><sub><em>C</em><em>V</em></sub>(<em>Θ</em>)</span> high</li>
+<li>High variance, large training size: <span class="math inline"><em>J</em><sub><em>t</em><em>r</em><em>a</em><em>i</em><em>n</em></sub>(<em>Θ</em>)</span> OK and <span class="math inline"><em>J</em><sub><em>C</em><em>V</em></sub>(<em>Θ</em>)</span> <strong>keep decreasing</strong></li>
+</ul></li>
+<li>Summary
+<ul>
+<li>Select best combo <span class="math inline"><em>Θ</em></span>, <span class="math inline"><em>λ</em></span>, and right amount of data by checking <span class="math inline"><em>J</em><sub><em>C</em><em>V</em></sub></span></li>
+<li>And also check <span class="math inline"><em>J</em><sub><em>t</em><em>e</em><em>s</em><em>t</em></sub></span> for good generalization</li>
+</ul></li>
+</ul>
+<p>Machine Learning System Design (with Spam classifier)</p>
+<ul>
+<li>Prioritizing What to Work On</li>
+<li>Error Analysis</li>
+<li>Error Metrics Skewed Classes</li>
+<li>Precision and Recall trade off</li>
+</ul>
+<h2 id="week-7">Week 7</h2>
+<ul>
+<li>Support Vector Machine</li>
+</ul>
+<h2 id="week-8">Week 8</h2>
+<p>Unsupervised Learning</p>
+<ul>
+<li>Clustering</li>
+<li>K-Means Algorithm</li>
+<li>Optimization Objective</li>
+<li>Random Initialization</li>
+<li>Choosing the Number of Clusters</li>
+</ul>
+<p>Dimensionality Reduction</p>
+<ul>
+<li>Motivation</li>
+<li>Motivation I: Data Compression</li>
+<li><p>Motivation II: Visualization</p></li>
+<li>Principal Component Analysis</li>
+<li>Principal Component Analysis Problem Formulation</li>
+<li><p>Principal Component Analysis Problem Algorithm</p></li>
+<li>Applying PCA</li>
+<li>Reconstructin from Compressed Representation</li>
+<li>Choosing the Number of Principal Components</li>
+<li><p>Advice for Applying PCA</p></li>
+</ul>
+<h2 id="week-9">Week 9</h2>
+<p>Anomaly Detection</p>
+<p>Recommender Systems</p>
+<h2 id="week-10">Week 10</h2>
+<p>Large Scale Machine Learning</p>
+<ul>
+<li>Gradient Descent with Large Datasets</li>
+<li>Learning with Large Datasets</li>
+<li>Stochastic Gradient Descent</li>
+<li>Mini-Batch Gradient Descent</li>
+<li><p>Stochastic Gradient Descent Convergence</p></li>
+<li>Advanced Topics</li>
+<li>Online Learning</li>
+<li><p>Map Reduce and Data Parallelism</p></li>
+</ul>
+<h2 id="week-11">Week 11</h2>
+<p>Application Example: Photo OCR</p>
+<ul>
+<li>Photo OCR</li>
+<li>Problem Description and Pipeline</li>
+<li>Sliding Windows</li>
+<li>Getting Lots of Data and Artificial Data</li>
+<li>Ceiling Analysis: What Part of the Pipeline to Work on Next</li>
+</ul>
+<p>Conclusion</p>
+<ul>
+<li>Summary and Thank You</li>
+</ul>
