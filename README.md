@@ -2,7 +2,7 @@ Howto **pandoc markdown with latex contents** in github project, especially serv
 
 -   Write README.pandoc.md
 -   Publish as README.md (github flavored markdown + webtex)
--   Use following command to convert (incorporate to build script will be nice)<br/>
+-   Use following command to convert (incorporate to build script or commit hook will be nice)<br/>
 
     ``` shell
     pandoc -t markdown_github --webtex README.pandoc.md -o README.md
