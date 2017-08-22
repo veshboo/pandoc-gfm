@@ -99,7 +99,7 @@ Model selection details: *J*(*Θ*; *λ*)
     -   bias(underfit): *J*<sub>*C**V*</sub>(*θ*)≈*J*<sub>*t**r**a**i**n*</sub>(*θ*)≫0, not enough parameters for task
     -   variance(overfit): *J*<sub>*C**V*</sub>(*θ*)≫*J*<sub>*t**r**a**i**n*</sub>(*θ*), too many parameters for task
 -   Regualization and Bias/Variance
-    -   Remind contribution of *λ* to *J*: $J(θ) = \\frac{1}{2m} \\sum\_{i=1}^{m} (h\_θ (x^{(i)}) - y^{(i)})^2 + \\frac{\\lambda}{2m} \\sum\_{j=1}^{m} \\theta\_j^2$
+    -   Remind contribution of *λ* to *J*, $J(θ) = \\frac{1}{2m} \\sum\_{i=1}^{m} (h\_θ (x^{(i)}) - y^{(i)})^2 + \\frac{\\lambda}{2m} \\sum\_{j=1}^{m} \\theta\_j^2$
     -   $\\lambda \\approx 0 \\implies \\verb!maybe overfit!$
     -   $\\lambda \\gg 0 \\implies \\verb!maybe less overfit!$
 -   Learning Curves, Error x ***training set size***

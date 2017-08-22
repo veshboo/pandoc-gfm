@@ -98,7 +98,7 @@ Model selection details: $J(\Theta;\lambda)$
     * bias(underfit): $J_{CV}(\theta) ≈ J_{train}(θ) ≫ 0$, not enough parameters for task
     * variance(overfit): $J_{CV}(θ) ≫ J_{train}(θ)$, too many parameters for task
 * Regualization and Bias/Variance
-    * Remind contribution of $\lambda$ to $J$:
+    * Remind contribution of $\lambda$ to $J$,
     $J(θ) = \frac{1}{2m} \sum_{i=1}^{m} (h_θ (x^{(i)}) - y^{(i)})^2 + \frac{\lambda}{2m} \sum_{j=1}^{m} \theta_j^2$
     * $\lambda \approx 0 \implies \verb!maybe overfit!$
     * $\lambda \gg 0 \implies \verb!maybe less overfit!$
