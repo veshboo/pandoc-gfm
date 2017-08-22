@@ -1,3 +1,14 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+</head>
+<body>
 <h1 id="machine-learning-lecture-by-andrew-ng-on-coursera">Machine Learning Lecture by Andrew Ng on Coursera</h1>
 <h2 id="week-1">Week 1</h2>
 <p>Introduction</p>
@@ -43,7 +54,7 @@
 <ul>
 <li>Non-linear Hypothesis</li>
 <li>Neurons and the Brain</li>
-<li><strong>Model Representation</strong> <br/> <span class="math inline"><em>x</em> = <em>a</em><sup>(1)</sup> → <em>g</em>(<em>a</em><sup>(1)</sup> * <em>Θ</em><sup>(1)</sup>)=<em>a</em><sup>(2)</sup> → <em>g</em>(<em>a</em><sup>(2)</sup> * <em>Θ</em><sup>(2)</sup>)=<em>a</em><sup>(3)</sup> → ... → <em>g</em>(<em>a</em><sup>(<em>l</em> − 1)</sup> * <em>Θ</em><sup>(<em>l</em> − 1)</sup>)=<em>a</em><sup>(<em>l</em>)</sup> = <em>h</em><sub><em>Θ</em></sub>(<em>x</em>)</span></li>
+<li><strong>Model Representation</strong> <br/> <span class="math inline">\(x = a^{(1)} \to  g(a^{(1)} * \Theta^{(1)}) = a^{(2)} \to  g(a^{(2)} * \Theta^{(2)}) = a^{(3)} \to  ... \to  g(a^{(l-1)} * \Theta^{(l-1)}) = a^{(l)} = h_\Theta(x)\)</span></li>
 <li>Example - AND, ! AND !, OR -&gt; XOR</li>
 <li>Example - Multclass Classification</li>
 </ul>
@@ -69,7 +80,7 @@
 <li>Trying smaller sets of features</li>
 <li>Trying additional sets of features</li>
 <li>Trying polynomial features</li>
-<li>Increasing or decreasing <span class="math inline"><em>λ</em></span></li>
+<li>Increasing or decreasing <span class="math inline">\(\lambda\)</span></li>
 </ul></li>
 </ul>
 <p>Training set / Cross Validation set / Test set</p>
@@ -81,34 +92,34 @@
 </ul></li>
 <li>Model selection with another separate cross validation set
 <ul>
-<li>Compare different models (# of features, degree of polynomial, and <span class="math inline"><em>λ</em></span>)</li>
+<li>Compare different models (# of features, degree of polynomial, and <span class="math inline">\(\lambda\)</span>)</li>
 <li>train:cv:test = 60%:20%:20%</li>
 </ul></li>
 </ul>
-<p>Model selection details: <span class="math inline"><em>J</em>(<em>Θ</em>; <em>λ</em>)</span></p>
+<p>Model selection details: <span class="math inline">\(J(\Theta;\lambda)\)</span></p>
 <ul>
-<li>Number of parameters(<span class="math inline">|<em>Θ</em>|</span>) and Bias/Variance
+<li>Number of parameters(<span class="math inline">\(|\Theta|\)</span>) and Bias/Variance
 <ul>
-<li>bias(underfit): <span class="math inline"><em>J</em><sub><em>C</em><em>V</em></sub>(<em>θ</em>)≈<em>J</em><sub><em>t</em><em>r</em><em>a</em><em>i</em><em>n</em></sub>(<em>θ</em>)≫0</span>, not enough parameters for task</li>
-<li>variance(overfit): <span class="math inline"><em>J</em><sub><em>C</em><em>V</em></sub>(<em>θ</em>)≫<em>J</em><sub><em>t</em><em>r</em><em>a</em><em>i</em><em>n</em></sub>(<em>θ</em>)</span>, too many parameters for task</li>
+<li>bias(underfit): <span class="math inline">\(J_{CV}(\theta) ≈ J_{train}(θ) ≫ 0\)</span>, not enough parameters for task</li>
+<li>variance(overfit): <span class="math inline">\(J_{CV}(θ) ≫ J_{train}(θ)\)</span>, too many parameters for task</li>
 </ul></li>
 <li>Regualization and Bias/Variance
 <ul>
-<li>Remind contribution of <span class="math inline"><em>λ</em></span> to <span class="math inline"><em>J</em></span>: <span class="math inline">$J(θ) = \frac{1}{2m} \sum_{i=1}^{m} (h_θ (x^{(i)}) - y^{(i)})^2 + \frac{\lambda}{2m} \sum_{j=1}^{m} \theta_j^2$</span></li>
-<li><span class="math inline">$\lambda \approx 0 \implies \verb!maybe overfit!$</span></li>
-<li><span class="math inline">$\lambda \gg 0 \implies \verb!maybe less overfit!$</span></li>
+<li>Remind contribution of <span class="math inline">\(\lambda\)</span> to <span class="math inline">\(J\)</span>: <span class="math inline">\(J(θ) = \frac{1}{2m} \sum_{i=1}^{m} (h_θ (x^{(i)}) - y^{(i)})^2 + \frac{\lambda}{2m} \sum_{j=1}^{m} \theta_j^2\)</span></li>
+<li><span class="math inline">\(\lambda \approx 0 \implies \verb!maybe overfit!\)</span></li>
+<li><span class="math inline">\(\lambda \gg 0 \implies \verb!maybe less overfit!\)</span></li>
 </ul></li>
 <li>Learning Curves, Error x <strong><em>training set size</em></strong>
 <ul>
-<li>High bias, low training size: <span class="math inline"><em>J</em><sub><em>t</em><em>r</em><em>a</em><em>i</em><em>n</em></sub>(<em>Θ</em>)</span> low and <span class="math inline"><em>J</em><sub><em>C</em><em>V</em></sub>(<em>Θ</em>)</span> high</li>
-<li>High bias, large training size: both <span class="math inline"><em>J</em><sub><em>t</em><em>r</em><em>a</em><em>i</em><em>n</em></sub>(<em>Θ</em>)</span> and <span class="math inline"><em>J</em><sub><em>C</em><em>V</em></sub>(<em>Θ</em>)</span> high</li>
-<li>High variance, low training size: <span class="math inline"><em>J</em><sub><em>t</em><em>r</em><em>a</em><em>i</em><em>n</em></sub>(<em>Θ</em>)</span> low and <span class="math inline"><em>J</em><sub><em>C</em><em>V</em></sub>(<em>Θ</em>)</span> high</li>
-<li>High variance, large training size: <span class="math inline"><em>J</em><sub><em>t</em><em>r</em><em>a</em><em>i</em><em>n</em></sub>(<em>Θ</em>)</span> OK and <span class="math inline"><em>J</em><sub><em>C</em><em>V</em></sub>(<em>Θ</em>)</span> <strong>keep decreasing</strong></li>
+<li>High bias, low training size: <span class="math inline">\(J_{train}(\Theta)\)</span> low and <span class="math inline">\(J_{CV}(\Theta)\)</span> high</li>
+<li>High bias, large training size: both <span class="math inline">\(J_{train}(\Theta)\)</span> and <span class="math inline">\(J_{CV}(\Theta)\)</span> high</li>
+<li>High variance, low training size: <span class="math inline">\(J_{train}(\Theta)\)</span> low and <span class="math inline">\(J_{CV}(\Theta)\)</span> high</li>
+<li>High variance, large training size: <span class="math inline">\(J_{train}(\Theta)\)</span> OK and <span class="math inline">\(J_{CV}(\Theta)\)</span> <strong>keep decreasing</strong></li>
 </ul></li>
 <li>Summary
 <ul>
-<li>Select best combo <span class="math inline"><em>Θ</em></span>, <span class="math inline"><em>λ</em></span>, and right amount of data by checking <span class="math inline"><em>J</em><sub><em>C</em><em>V</em></sub></span></li>
-<li>And also check <span class="math inline"><em>J</em><sub><em>t</em><em>e</em><em>s</em><em>t</em></sub></span> for good generalization</li>
+<li>Select best combo <span class="math inline">\(\Theta\)</span>, <span class="math inline">\(\lambda\)</span>, and right amount of data by checking <span class="math inline">\(J_{CV}\)</span></li>
+<li>And also check <span class="math inline">\(J_{test}\)</span> for good generalization</li>
 </ul></li>
 </ul>
 <p>Machine Learning System Design (with Spam classifier)</p>
@@ -172,3 +183,5 @@
 <ul>
 <li>Summary and Thank You</li>
 </ul>
+</body>
+</html>
